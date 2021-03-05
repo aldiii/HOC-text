@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
@@ -28,12 +28,14 @@ function RadioGroup({ on, toggle, children }) {
 }
 
 function App() {
+  const [on, setOn] = useState(false);
+  const toggle = () => setOn((prevOn) => !prevOn);
   return (
     <div className="App">
-      <CheckBox on={false} toggle={() => null}>
+      <CheckBox on={on} toggle={toggle}>
         First option
       </CheckBox>
-      <RadioGroup on={false} toggle={() => null}>
+      <RadioGroup on={on} toggle={toggle}>
         SecondOption
       </RadioGroup>
     </div>
