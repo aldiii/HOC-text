@@ -1,31 +1,9 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { CheckBox } from "./CheckBox";
+import { RadioGroup } from "./RadioGroup";
 
 import "./styles.css";
-
-function CheckBox({ on, toggle, children }) {
-  return (
-    <label>
-      {children}
-      <input type="checkbox" checked={on} onChange={toggle} />
-    </label>
-  );
-}
-
-function RadioGroup({ on, toggle, children }) {
-  return (
-    <div>
-      <p>{children}</p>
-      <label>
-        On: <input type="radio" checked={on} onChange={toggle} />
-      </label>
-      <br />
-      <label>
-        Off: <input type="radio" checked={!on} onChange={toggle} />
-      </label>
-    </div>
-  );
-}
 
 function App() {
   const [on, setOn] = useState(false);
