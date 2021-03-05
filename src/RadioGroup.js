@@ -1,9 +1,9 @@
 import React from "react";
 
-export function RadioGroup({ on, toggle, children }) {
+export function RadioGroup({ isImportant, on, toggle, children }) {
   return (
     <div>
-      <p>{children}</p>
+      <p>{isImportant ? <strong>{children}</strong> : children}</p>
       <label>
         On: <input type="radio" checked={on} onChange={toggle} />
       </label>

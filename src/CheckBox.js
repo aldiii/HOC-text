@@ -1,9 +1,9 @@
 import React from "react";
 
-export function CheckBox({ on, toggle, children }) {
+export function CheckBox({ isImportant, on, toggle, children }) {
   return (
     <label>
-      {children}
+      {isImportant ? <strong>{children}</strong> : children}
       <input type="checkbox" checked={on} onChange={toggle} />
     </label>
   );

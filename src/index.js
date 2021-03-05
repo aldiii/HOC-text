@@ -6,11 +6,12 @@ import { RadioGroup } from "./RadioGroup";
 import "./styles.css";
 
 function WithOnOffState(StatelessComponent) {
-  function EnhancedComponent({ children }) {
+  function EnhancedComponent(props) {
+    const { children } = props;
     const [on, setOn] = useState(false);
     const toggle = () => setOn((prevOn) => !prevOn);
     return (
-      <StatelessComponent on={on} toggle={toggle}>
+      <StatelessComponent on={on} toggle={toggle} {...props}>
         {children}
       </StatelessComponent>
     );
@@ -25,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <CheckBoxWithState>First option</CheckBoxWithState>
-      <RadioGroupWithState>SecondOption</RadioGroupWithState>
+      <RadioGroupWithState isImportant>SecondOption</RadioGroupWithState>
     </div>
   );
 }
