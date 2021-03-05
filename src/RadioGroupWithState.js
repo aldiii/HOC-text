@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { RadioGroup } from "./RadioGroup";
 
-function RadioGroupWithState({ children }) {
+export function RadioGroupWithState({ children }) {
   const [on, setOn] = useState(false);
   const toggle = () => setOn((prevOn) => !prevOn);
   return (

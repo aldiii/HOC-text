@@ -1,21 +1,15 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import { CheckBox } from "./CheckBox";
-import { RadioGroup } from "./RadioGroup";
+import { CheckBoxWithState } from "./CheckBoxWithState";
+import { RadioGroupWithState } from "./RadioGroupWithState";
 
 import "./styles.css";
 
 function App() {
-  const [on, setOn] = useState(false);
-  const toggle = () => setOn((prevOn) => !prevOn);
   return (
     <div className="App">
-      <CheckBox on={on} toggle={toggle}>
-        First option
-      </CheckBox>
-      <RadioGroup on={on} toggle={toggle}>
-        SecondOption
-      </RadioGroup>
+      <CheckBoxWithState>First option</CheckBoxWithState>
+      <RadioGroupWithState>SecondOption</RadioGroupWithState>
     </div>
   );
 }
